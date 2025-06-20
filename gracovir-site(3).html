@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracovir International SARL | Exportateur de Bois Camerounais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #4caf50;
+            --accent: #ff9800;
+            --light: #f5f5f5;
+            --dark: #333333;
+            --gray: #757575;
+            --light-gray: #e0e0e0;
+            --white: #ffffff;
+            --wood-brown: #8B4513;
+            --wood-light: #D2B48C;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #fafafa;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        .btn-buy {
+            background: var(--accent);
+            color: var(--dark);
+            font-weight: 700;
+            padding: 12px 25px;
+            margin-top: 10px;
+        }
+        .btn-buy:hover {
+            background: #e68a00;
+        }
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+            position: relative;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        .hero-btns {
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        section {
+            padding: 100px 0;
+            transition: filter 0.3s, transform 0.3s;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        .about {
+            background-color: var(--light);
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-width: 300px;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        .product-info {
+            padding: 25px;
+        }
+        .product-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        .certifications {
+            background-color: var(--light);
+        }
+        .certs-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .cert-item {
+            text-align: center;
+            max-width: 200px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .cert-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .cert-icon {
+            width: 100px;
+            height: 100px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .cert-icon:hover {
+            transform: scale(1.1);
+        }
+        .cert-icon i {
+            font-size: 40px;
+            color: var(--primary);
+        }
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .contact-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .contact-item i {
+            font-size: 20px;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        .contact-form {
+            flex: 1;
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            min-width: 280px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        /* Modal styles */
+        #modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s;
+            z-index: 2000;
+        }
+        #modal-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        #modal-overlay.active .modal {
+            transform: scale(1);
+        }
+        .modal .close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s ease;
+        }
+        .modal .close:hover {
+            color: var(--primary);
+        }
+        .modal-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .modal-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .modal-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .modal-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .modal-info h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .modal-info .scientific-name {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 20px;
+            display: block;
+        }
+        .modal-details {
+            margin-bottom: 25px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        .detail-label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .detail-value {
+            color: var(--gray);
+        }
+        .history {
+            background-color: rgba(142, 188, 143, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 20px;
+        }
+        .history h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .buy-section {
+            background-color: rgba(255, 152, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            margin-top: 20px;
+        }
+        .buy-section h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .price-display {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .order-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .order-form .form-group {
+            margin-bottom: 0;
+        }
+        .order-form input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+        }
+        .wood-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .category-btn {
+            padding: 10px 20px;
+            background: var(--white);
+            border: 2px solid var(--light-gray);
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .category-btn.active, .category-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+        .wood-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .wood-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .wood-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .wood-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .wood-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        .wood-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .wood-card:hover .wood-image img {
+            transform: scale(1.05);
+        }
+        .wood-info {
+            padding: 20px;
+        }
+        .wood-info h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .wood-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .nav-links li {
+                margin-left: 20px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            .hero {
+                height: 80vh;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+            .modal-content {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .wood-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzJlN2QzMiI+PHBhdGggZD0iTTE2LjUgMTJjMC0xLjkzMy0uNTA0LTMuNzUtMS4zODUtNS4zMzNDMTQuMjI4IDUuMDg1IDEyLjk5IDQgMTEuNSA0UzguNzcyIDUuMDg1IDcuODg1IDYuNjY3QzcuNTA0IDguMjUgNyAxMC4wNjcgNyAxMnMuNTA0IDMuNzUgMS4zODUgNS4zMzNDOC43NzIgMTguOTE1IDEwLjAxIDIwIDExLjUgMjBzMi43MjgtMS4wODUgMy42MTUtMi42NjdDMTUuOTk2IDE1Ljc1IDE2LjUgMTMuOTMzIDE2LjUgMTJ6Ii8+PHBhdGggZD0iTTE0LjY2NyA1LjMzM0MxMy43NzggMy43NSAxMi41NDQgMyAxMSAzaC0uNXYxOGguNWMxLjU0NCAwIDIuNzc4LS43NSAzLjY2Ny0yLjMzM0MxNS45OTYgMTUuNzUgMTYuNSAxMy45MzMgMTYuNSAxMnMtLjUwNC0zLjc1LTEuMzgzLTUuMzM3eiIgZmlsbD0iI2ZmOTgwMCIvPjwvc3ZnPg==" alt="Logo">
+                    Gracovir<span>International</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#fiche-entreprise">Fiche Entreprise</a></li>
+                    <li><a href="#a-propos">À Propos</a></li>
+                    <li><a href="#essences">Essences</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>Gracovir International SARL</h1>
+            <p>Exportateur de Bois Camerounais de Qualité<br>Depuis 2010 | Gestion Forestière Durable</p>
+            <div class="hero-btns">
+                <a href="#essences" class="btn">Découvrir nos essences</a>
+                <a href="#contact" class="btn btn-outline">Demander un devis</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fiche Entreprise Section -->
+    <section id="fiche-entreprise">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fiche Entreprise Officielle</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="detail-row">
+                        <span class="detail-label">🏢 Dénomination légale</span>
+                        <span class="detail-value">Gracovir International SARL (GIS)</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📌 Secteur d'activité</span>
+                        <span class="detail-value">Exploitation forestière<br>Exportation de bois</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📍 Adresse légale</span>
+                        <span class="detail-value">BP 14079 Yaoundé, Cameroun<br>Point de repère : ETOA-Yaoundé</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📞 Contact</span>
+                        <span class="detail-value">Tél: <a href="tel:+237694470161">+237 694 47 01 61</a></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📧 Emails</span>
+                        <span class="detail-value">
+                            <a href="mailto:gracovir@gmail.com">gracovir@gmail.com</a><br>
+                            <a href="mailto:gistember@gmail.com">gistember@gmail.com</a>
+                        </span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">🔍 Identifiants légaux</span>
+                        <span class="detail-value">RCCM : 97J0261<br>N° Contribuable : M069700021398F</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">👔 Direction</span>
+                        <span class="detail-value">PDG : Monsieur Kengne David</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1595433562696-a8b1cb8bdad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80" alt="Siège de Gracovir International">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="a-propos">
+        <div class="container">
+            <div class="section-title">
+                <h2>À Propos de Gracovir International</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Notre histoire et notre mission</h3>
+                    <p>Fondée en 2010, Gracovir International SARL est une entreprise camerounaise spécialisée dans l'exportation de bois vers les marchés internationaux. Nous nous engageons à fournir des produits de qualité tout en respectant les normes environnementales les plus strictes.</p>
+                    <p>Notre mission est de promouvoir les essences de bois camerounaises à travers le monde en garantissant une traçabilité complète et une gestion forestière responsable. Nous travaillons en étroite collaboration avec les communautés locales et les autorités pour assurer un impact positif sur l'économie et l'environnement.</p>
+                    <p>Basée à Yaoundé, notre équipe de professionnels dispose de plus de 15 ans d'expérience dans le secteur forestier africain et maîtrise toutes les étapes de la chaîne d'exportation.</p>
+                    <div class="stats">
+                        <div class="detail-row">
+                            <span class="detail-label">🌍 Pays exportés</span>
+                            <span class="detail-value">15+</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">📦 Exportations annuelles</span>
+                            <span class="detail-value">10,000+ m³</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">🌲 Essences disponibles</span>
+                            <span class="detail-value">17</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1568031813264-d394c5d474b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Gestion forestière durable">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wood Species Section -->
+    <section class="products" id="essences">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Essences de Bois</h2>
+                <p>Découvrez notre sélection de bois camerounais de première qualité</p>
+            </div>
+            
+            <div class="wood-categories">
+                <button class="category-btn active" data-category="all">Toutes</button>
+                <button class="category-btn" data-category="doux">Bois doux</button>
+                <button class="category-btn" data-category="dur">Bois durs</button>
+                <button class="category-btn" data-category="premium">Premium</button>
+            </div>
+            
+            <div class="wood-grid">
+                <!-- Ayous -->
+                <div class="wood-card" data-wood="ayous" data-category="doux">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes d'Ayous">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Ayous</h3>
+                        <p>Bois léger et tendre, idéal pour la menuiserie intérieure, les meubles et les contreplaqués.</p>
+                        <button class="btn" data-wood="ayous">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Sapelli -->
+                <div class="wood-card" data-wood="sapelli" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Sapelli">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Sapelli</h3>
+                        <p>Bois rougeâtre aux reflets dorés, très prisé pour l'ébénisterie et les parquets de luxe.</p>
+                        <button class="btn" data-wood="sapelli">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Bilinga -->
+                <div class="wood-card" data-wood="bilinga" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1542995470-870e12e7e14f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Bilinga">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Bilinga</h3>
+                        <p>Bois jaune doré à orange, très durable et résistant, parfait pour les structures extérieures.</p>
+                        <button class="btn" data-wood="bilinga">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Tali -->
+                <div class="wood-card" data-wood="tali" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Tali">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Tali</h3>
+                        <p>Bois rouge brun très dense et résistant, excellent pour les planchers et les constructions navales.</p>
+                        <button class="btn" data-wood="tali">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Okan -->
+                <div class="wood-card" data-wood="okan" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1541140917200-9b8ab1d2c937?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes d'Okan">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Okan</h3>
+                        <p>Bois brun rougeâtre très dur, utilisé pour les traverses de chemin de fer et les charpentes.</p>
+                        <button class="btn" data-wood="okan">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Doussie -->
+                <div class="wood-card" data-wood="doussie" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1595433562696-a8b1cb8bdad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80" alt="Grumes de Doussie">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Doussie</h3>
+                        <p>Bois brun doré extrêmement durable, idéal pour les terrasses et l'ébénisterie extérieure.</p>
+                        <button class="btn" data-wood="doussie">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Pao Rosa -->
+                <div class="wood-card" data-wood="pao-rosa" data-category="premium">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1611095772763-5b6d4c2a8d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Pao Rosa">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Pao Rosa</h3>
+                        <p>Bois rose violacé précieux, utilisé en marqueterie et pour les instruments de musique.</p>
+                        <button class="btn" data-wood="pao-rosa">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Iroko -->
+                <div class="wood-card" data-wood="iroko" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes d'Iroko">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Iroko</h3>
+                        <p>Bois doré très résistant aux insectes, souvent utilisé comme alternative au teck.</p>
+                        <button class="btn" data-wood="iroko">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Moabi -->
+                <div class="wood-card" data-wood="moabi" data-category="premium">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Moabi">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Moabi</h3>
+                        <p>Bois rougeâtre très dense, résistant et durable, idéal pour les parquets haut de gamme.</p>
+                        <button class="btn" data-wood="moabi">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Padouk -->
+                <div class="wood-card" data-wood="padouk" data-category="premium">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Padouk">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Padouk</h3>
+                        <p>Bois rouge vif à orange, très décoratif, utilisé en ébénisterie fine et marqueterie.</p>
+                        <button class="btn" data-wood="padouk">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Sipo -->
+                <div class="wood-card" data-wood="sipo" data-category="doux">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1542995470-870e12e7e14f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Sipo">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Sipo</h3>
+                        <p>Bois brun rougeâtre, facile à travailler, utilisé en menuiserie intérieure et extérieure.</p>
+                        <button class="btn" data-wood="sipo">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Bosse -->
+                <div class="wood-card" data-wood="bosse" data-category="doux">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Bosse">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Bosse</h3>
+                        <p>Bois clair et léger, utilisé pour la fabrication de contreplaqués et de caisserie.</p>
+                        <button class="btn" data-wood="bosse">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Bibolo -->
+                <div class="wood-card" data-wood="bibolo" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1541140917200-9b8ab1d2c937?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Bibolo">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Bibolo</h3>
+                        <p>Bois brun rougeâtre, durable et résistant, utilisé pour les charpentes et planchers.</p>
+                        <button class="btn" data-wood="bibolo">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Acajou -->
+                <div class="wood-card" data-wood="acajou" data-category="premium">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1595433562696-a8b1cb8bdad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80" alt="Grumes d'Acajou">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Acajou</h3>
+                        <p>Bois brun rougeâtre, grain fin, utilisé en ébénisterie de luxe et ameublement haut de gamme.</p>
+                        <button class="btn" data-wood="acajou">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Mukulungu -->
+                <div class="wood-card" data-wood="mukulungu" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1611095772763-5b6d4c2a8d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes de Mukulungu">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Mukulungu</h3>
+                        <p>Bois brun jaunâtre, très dur et lourd, utilisé pour les travaux de génie civil et charpentes.</p>
+                        <button class="btn" data-wood="mukulungu">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Angongui -->
+                <div class="wood-card" data-wood="angongui" data-category="dur">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes d'Angongui">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Angongui</h3>
+                        <p>Bois brun rougeâtre, très dur et durable, utilisé pour les parquets et menuiserie extérieure.</p>
+                        <button class="btn" data-wood="angongui">En savoir plus</button>
+                    </div>
+                </div>
+                
+                <!-- Illomba -->
+                <div class="wood-card" data-wood="illomba" data-category="doux">
+                    <div class="wood-image">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Grumes d'Illomba">
+                    </div>
+                    <div class="wood-info">
+                        <h3>Illomba</h3>
+                        <p>Bois clair et léger, utilisé pour la fabrication de contreplaqués, emballages et caisserie.</p>
+                        <button class="btn" data-wood="illomba">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlay for wood details -->
+    <div id="modal-overlay">
+        <div class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="Wood Detail">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modal-title"></h3>
+                    <span class="scientific-name" id="modal-scientific"></span>
+                    <div class="modal-details">
+                        <div class="detail-row">
+                            <span class="detail-label">Densité</span>
+                            <span class="detail-value" id="modal-density"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Dureté</span>
+                            <span class="detail-value" id="modal-hardness"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Séchage</span>
+                            <span class="detail-value" id="modal-drying"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Durabilité</span>
+                            <span class="detail-value" id="modal-durability"></span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Utilisations</span>
+                            <span class="detail-value" id="modal-uses"></span>
+                        </div>
+                    </div>
+                    <div class="history">
+                        <h4>Histoire & Origine</h4>
+                        <p id="modal-history"></p>
+                    </div>
+                    <div class="buy-section">
+                        <h4>Commander cette essence</h4>
+                        <div class="price-display" id="modal-price"></div>
+                        <div class="order-form">
+                            <div class="form-group">
+                                <input type="number" id="quantity" min="1" value="1" placeholder="Quantité (m³)">
+                            </div>
+                            <button class="btn btn-buy" id="confirm-order">Commander</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase Confirmation Modal -->
+    <div id="purchase-modal" class="modal" style="display:none; max-width:600px;">
+        <span class="close" id="close-purchase">&times;</span>
+        <div class="modal-content">
+            <h3 style="text-align:center; margin-bottom:20px;">Confirmation de Commande</h3>
+            <div id="purchase-details" style="margin-bottom:30px;">
+                <!-- Purchase details will be inserted here -->
+            </div>
+            <h4>Vos informations</h4>
+            <form id="purchase-form">
+                <div class="form-group">
+                    <label for="purchase-name">Nom complet</label>
+                    <input type="text" id="purchase-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="purchase-email">Email</label>
+                    <input type="email" id="purchase-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="purchase-phone">Téléphone</label>
+                    <input type="tel" id="purchase-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="purchase-address">Adresse de livraison</label>
+                    <textarea id="purchase-address" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width:100%;">Finaliser la Commande</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Certifications</h2>
+                <p>Garanties de qualité et de durabilité</p>
+            </div>
+            <div class="certs-container">
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>FSC®</h3>
+                    <p>Forest Stewardship Council</p>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>OLB</h3>
+                    <p>Origine Légalité du Bois</p>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>PAFC</h3>
+                    <p>Pan African Forest Certification</p>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>ISO 14001</h3>
+                    <p>Management environnemental</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contactez-nous</h2>
+                <p>Nous sommes à votre disposition pour toute demande</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>BP 14079 Yaoundé<br>Cameroun<br>ETOA-Yaoundé</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:+237694470161">+237 694 47 01 61</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>
+                                    <a href="mailto:gracovir@gmail.com">gracovir@gmail.com</a><br>
+                                    <a href="mailto:gistember@gmail.com">gistember@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Horaires</h4>
+                                <p>Lun-Ven: 8h00 - 17h00<br>Samedi: 9h00 - 13h00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15918.629754132055!2d11.502317529655368!3d3.848632546175502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x108bcf3d5b5b5b5b%3A0x8f2f6a5d5d5d5d5d!2sYaound%C3%A9%2C%20Cameroun!5e0!3m2!1sfr!2sfr!4v1688115600000!5m2!1sfr!2sfr" width="100%" height="250" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Gracovir International</h3>
+                    <p>Exportateur de bois camerounais de qualité depuis 2010. Engagés dans une gestion forestière durable et responsable.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#fiche-entreprise">Fiche Entreprise</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#essences">Essences</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Nos Essences</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" data-wood="ayous">Ayous</a></li>
+                        <li><a href="#" data-wood="sapelli">Sapelli</a></li>
+                        <li><a href="#" data-wood="bilinga">Bilinga</a></li>
+                        <li><a href="#" data-wood="tali">Tali</a></li>
+                        <li><a href="#" data-wood="doussie">Doussie</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos actualités et offres spéciales</p>
+                    <form id="newsletterForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Votre email" required>
+                        </div>
+                        <button type="submit" class="btn">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Gracovir International SARL. Tous droits réservés. | RCCM: 97J0261 | N° Contribuable: M069700021398F</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Wood species data with prices
+        const woodData = {
+            ayous: {
+                title: 'Ayous',
+                scientific: 'Triplochiton scleroxylon',
+                image: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '420 kg/m³',
+                hardness: 'Moyenne',
+                drying: 'Facile et rapide',
+                durability: 'Faible (usage intérieur)',
+                uses: 'Menuiserie intérieure, meubles, contreplaqués',
+                history: "L'Ayous est un bois emblématique des forêts camerounaises, utilisé depuis des siècles par les populations locales pour sa légèreté et sa facilité de travail. Son nom vient du terme local 'Ayous' qui signifie 'bois tendre'. Au XXe siècle, il est devenu l'un des bois africains les plus exportés grâce à ses qualités exceptionnelles pour la fabrication de contreplaqués.",
+                price: "€450/m³"
+            },
+            sapelli: {
+                title: 'Sapelli',
+                scientific: 'Entandrophragma cylindricum',
+                image: 'https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '640 kg/m³',
+                hardness: 'Élevée',
+                drying: 'Modérée avec précaution',
+                durability: 'Bonne',
+                uses: 'Ébénisterie, parquets, menuiserie extérieure',
+                history: "Le Sapelli, avec ses reflets dorés caractéristiques, a été surnommé 'l'or rouge' des forêts africaines. Utilisé traditionnellement pour la construction de pirogues, il est aujourd'hui très prisé en ébénisterie de luxe. Son grain entrelacé lui confère un aspect visuel unique qui rappelle l'acajou, ce qui en fait un bois particulièrement recherché.",
+                price: "€780/m³"
+            },
+            bilinga: {
+                title: 'Bilinga',
+                scientific: 'Nauclea diderrichii',
+                image: 'https://images.unsplash.com/photo-1542995470-870e12e7e14f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '750 kg/m³',
+                hardness: 'Très élevée',
+                drying: 'Lente avec risques de déformation',
+                durability: 'Excellente',
+                uses: 'Terrasses, charpentes, ponts, constructions navales',
+                history: "Le Bilinga, reconnaissable à sa couleur jaune-orange intense, est un bois sacré pour certaines ethnies camerounaises qui l'utilisaient pour sculpter des statues rituelles. Sa résistance exceptionnelle aux intempéries en a fait un matériau de choix pour les constructions coloniales au début du XXe siècle. Aujourd'hui, il est particulièrement apprécié pour les aménagements extérieurs haut de gamme.",
+                price: "€920/m³"
+            },
+            tali: {
+                title: 'Tali',
+                scientific: 'Erythrophleum suaveolens',
+                image: 'https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '880 kg/m³',
+                hardness: 'Extrême',
+                drying: 'Très lente et difficile',
+                durability: 'Exceptionnelle',
+                uses: 'Planchers industriels, traverses, constructions lourdes',
+                history: "Le Tali est l'un des bois les plus denses et résistants d'Afrique. Traditionnellement, son écorce était utilisée pour préparer des poisons de chasse, d'où son nom local qui signifie 'arbre qui tue'. Malgré cette réputation, son bois est inerte une fois séché et offre une durabilité incomparable, ce qui le destine aux applications les plus exigeantes.",
+                price: "€1050/m³"
+            },
+            okan: {
+                title: 'Okan',
+                scientific: 'Cylicodiscus gabunensis',
+                image: 'https://images.unsplash.com/photo-1541140917200-9b8ab1d2c937?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '850 kg/m³',
+                hardness: 'Très élevée',
+                drying: 'Lente avec précaution',
+                durability: 'Excellente',
+                uses: 'Charpentes lourdes, traverses, ponts',
+                history: "L'Okan, aussi appelé 'Bongossi', est un bois mythique des forêts camerounaises. Sa résistance naturelle aux termites et aux champignons en a fait un matériau de choix pour les constructions coloniales. On raconte que les premières traverses de chemin de fer posées au Cameroun il y a plus d'un siècle en Okan sont toujours en parfait état aujourd'hui.",
+                price: "€980/m³"
+            },
+            doussie: {
+                title: 'Doussie',
+                scientific: 'Afzelia spp.',
+                image: 'https://images.unsplash.com/photo-1595433562696-a8b1cb8bdad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80',
+                density: '800 kg/m³',
+                hardness: 'Élevée',
+                drying: 'Lente mais bonne stabilité',
+                durability: 'Excellente',
+                uses: 'Terrasses, menuiserie extérieure, ébénisterie',
+                history: "Le Doussie, avec ses nuances allant du brun doré au rougeâtre, est apprécié depuis des siècles. Les rois Bamouns l'utilisaient pour sculpter leurs trônes et objets cérémoniels. Sa résistance naturelle à l'eau et sa stabilité dimensionnelle exceptionnelle en font aujourd'hui un bois de prédilection pour les aménagements extérieurs de luxe.",
+                price: "€950/m³"
+            },
+            "pao-rosa": {
+                title: 'Pao Rosa',
+                scientific: 'Bobgunnia fistuloides',
+                image: 'https://images.unsplash.com/photo-1611095772763-5b6d4c2a8d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '750 kg/m³',
+                hardness: 'Élevée',
+                drying: 'Lente avec risques de fentes',
+                durability: 'Bonne',
+                uses: 'Marqueterie, lutherie, ébénisterie fine',
+                history: "Le Pao Rosa, avec ses teintes roses violacées uniques, est l'un des bois les plus précieux d'Afrique. Traditionnellement réservé aux sculptures royales, il est aujourd'hui très recherché par les ébénistes et luthiers pour ses qualités acoustiques exceptionnelles. Sa rareté et sa beauté en font un matériau d'exception pour les créations haut de gamme.",
+                price: "€1250/m³"
+            },
+            iroko: {
+                title: 'Iroko',
+                scientific: 'Milicia excelsa',
+                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '660 kg/m³',
+                hardness: 'Moyenne',
+                drying: 'Facile avec bonne stabilité',
+                durability: 'Excellente',
+                uses: 'Menuiserie extérieure, charpente, mobilier',
+                history: "L'Iroko est considéré comme un arbre sacré dans de nombreuses cultures d'Afrique de l'Ouest. Traditionnellement, on plantait un Iroko à la naissance d'un enfant comme symbole de longévité. Son bois, résistant et stable, est souvent appelé 'teck africain' bien qu'il n'appartienne pas à la même famille botanique. Il est particulièrement apprécié pour sa résistance naturelle aux termites.",
+                price: "€850/m³"
+            },
+            moabi: {
+                title: 'Moabi',
+                scientific: 'Baillonella toxisperma',
+                image: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '820 kg/m³',
+                hardness: 'Très élevée',
+                drying: 'Lente',
+                durability: 'Excellente',
+                uses: 'Parquets, meubles de luxe, sculptures',
+                history: "Le Moabi est un arbre majestueux des forêts équatoriales, pouvant atteindre 60 mètres de hauteur. Son bois rougeâtre est très prisé pour sa dureté et sa beauté. Traditionnellement, son huile était utilisée pour la cuisine et les soins corporels. Aujourd'hui, il est un bois de choix pour les applications haut de gamme.",
+                price: "€1100/m³"
+            },
+            padouk: {
+                title: 'Padouk',
+                scientific: 'Pterocarpus soyauxii',
+                image: 'https://images.unsplash.com/photo-1560448204-603b3fc33ddc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '750 kg/m³',
+                hardness: 'Élevée',
+                drying: 'Modérée',
+                durability: 'Bonne',
+                uses: 'Ébénisterie fine, marqueterie, instruments de musique',
+                history: "Le Padouk est célèbre pour sa couleur rouge vif qui fonce avec le temps pour prendre des reflets pourpres. Utilisé traditionnellement pour la teinture des textiles, son bois est aujourd'hui très recherché en ébénisterie d'art. Sa couleur intense et sa durabilité en font un bois d'exception pour les créations uniques.",
+                price: "€1350/m³"
+            },
+            sipo: {
+                title: 'Sipo',
+                scientific: 'Entandrophragma utile',
+                image: 'https://images.unsplash.com/photo-1542995470-870e12e7e14f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '620 kg/m³',
+                hardness: 'Moyenne',
+                drying: 'Facile',
+                durability: 'Bonne',
+                uses: 'Menuiserie intérieure et extérieure, mobilier',
+                history: "Le Sipo, avec son grain droit et sa couleur brun-rosé, est un bois polyvalent apprécié pour sa facilité de travail. Traditionnellement utilisé pour la construction de pirogues, il est aujourd'hui largement employé dans la fabrication de meubles et d'éléments de menuiserie. Son excellent rapport qualité-prix en fait un choix populaire.",
+                price: "€720/m³"
+            },
+            bosse: {
+                title: 'Bosse',
+                scientific: 'Guarea cedrata',
+                image: 'https://images.unsplash.com/photo-1601760561441-16420502c7e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '520 kg/m³',
+                hardness: 'Moyenne',
+                drying: 'Rapide',
+                durability: 'Moyenne',
+                uses: 'Contreplaqués, caisserie, emballages',
+                history: "Le Bosse est un bois clair et léger, facile à travailler. Traditionnellement utilisé pour la fabrication d'objets utilitaires, il est aujourd'hui principalement destiné à l'industrie du contreplaqué et de l'emballage. Son abondance et son faible coût en font un matériau économique pour de nombreuses applications.",
+                price: "€380/m³"
+            },
+            bibolo: {
+                title: 'Bibolo',
+                scientific: 'Lovoa trichilioides',
+                image: 'https://images.unsplash.com/photo-1541140917200-9b8ab1d2c937?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '580 kg/m³',
+                hardness: 'Moyenne',
+                drying: 'Facile',
+                durability: 'Moyenne',
+                uses: 'Mobilier, menuiserie intérieure, placages',
+                history: "Le Bibolo, aussi appelé 'Tigerwood' pour son grain caractéristique, est un bois apprécié pour son aspect décoratif. Traditionnellement utilisé pour la fabrication de tambours rituels, il est aujourd'hui employé en ébénisterie et en menuiserie d'intérieur. Son motif rayé unique lui donne un caractère distinctif.",
+                price: "€680/m³"
+            },
+            acajou: {
+                title: 'Acajou',
+                scientific: 'Khaya spp.',
+                image: 'https://images.unsplash.com/photo-1595433562696-a8b1cb8bdad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1476&q=80',
+                density: '650 kg/m³',
+                hardness: 'Moyenne',
+                drying: 'Facile',
+                durability: 'Bonne',
+                uses: 'Mobilier haut de gamme, ébénisterie, lambris',
+                history: "L'Acajou africain est un bois noble réputé pour sa beauté et sa facilité de travail. Utilisé depuis le XVIIIe siècle dans la marine pour la construction des navires, il est aujourd'hui un matériau de choix pour l'ameublement de luxe. Son grain fin et sa couleur chaude en font un bois très apprécié.",
+                price: "€890/m³"
+            },
+            mukulungu: {
+                title: 'Mukulungu',
+                scientific: 'Autranella congolensis',
+                image: 'https://images.unsplash.com/photo-1611095772763-5b6d4c2a8d5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '900 kg/m³',
+                hardness: 'Très élevée',
+                drying: 'Très lente',
+                durability: 'Excellente',
+                uses: 'Charpentes lourdes, ponts, traverses',
+                history: "Le Mukulungu est un bois extrêmement dense et durable, traditionnellement utilisé pour la construction des habitations dans les régions humides. Sa résistance exceptionnelle aux champignons et aux insectes en fait un matériau idéal pour les applications structurelles exigeantes. Sa rareté en fait un bois précieux.",
+                price: "€1150/m³"
+            },
+            angongui: {
+                title: 'Angongui',
+                scientific: 'Poga oleosa',
+                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '780 kg/m³',
+                hardness: 'Élevée',
+                drying: 'Lente',
+                durability: 'Très bonne',
+                uses: 'Parquets, menuiserie extérieure, mobilier de jardin',
+                history: "L'Angongui est un bois brun-rouge aux reflets dorés, très résistant aux intempéries. Traditionnellement utilisé pour la fabrication d'outils agricoles, il est aujourd'hui apprécié pour les aménagements extérieurs. Son huile est également utilisée en cosmétique traditionnelle.",
+                price: "€950/m³"
+            },
+            illomba: {
+                title: 'Illomba',
+                scientific: 'Pycnanthus angolensis',
+                image: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+                density: '480 kg/m³',
+                hardness: 'Faible',
+                drying: 'Rapide',
+                durability: 'Faible',
+                uses: 'Contreplaqués, emballages, caisserie',
+                history: "L'Illomba est un bois léger et tendre, facile à travailler. Traditionnellement utilisé pour la fabrication de pirogues légères, il est aujourd'hui principalement destiné à l'industrie du contreplaqué et de l'emballage. Son abondance et son faible coût en font un matériau économique.",
+                price: "€350/m³"
+            }
+        };
+
+        // DOM Elements
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalScientific = document.getElementById('modal-scientific');
+        const modalImg = document.getElementById('modal-img');
+        const modalDensity = document.getElementById('modal-density');
+        const modalHardness = document.getElementById('modal-hardness');
+        const modalDrying = document.getElementById('modal-drying');
+        const modalDurability = document.getElementById('modal-durability');
+        const modalUses = document.getElementById('modal-uses');
+        const modalHistory = document.getElementById('modal-history');
+        const modalPrice = document.getElementById('modal-price');
+        const closeBtn = document.querySelector('.modal .close');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const woodCards = document.querySelectorAll('.wood-card');
+        const certItems = document.querySelectorAll('.cert-item');
+        const confirmOrderBtn = document.getElementById('confirm-order');
+        const purchaseModal = document.getElementById('purchase-modal');
+        const closePurchaseBtn = document.getElementById('close-purchase');
+        const purchaseDetails = document.getElementById('purchase-details');
+        const purchaseForm = document.getElementById('purchase-form');
+        const quantityInput = document.getElementById('quantity');
+
+        // Current selected wood
+        let currentWood = null;
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate certifications
+            setTimeout(() => {
+                certItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 150 * index);
+                });
+            }, 500);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Update active nav link
+                    document.querySelectorAll('.nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+                header.style.background = 'rgba(255,255,255,0.95)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                header.style.background = 'var(--white)';
+                header.style.padding = '20px 0';
+            }
+            
+            // Animate wood cards on scroll
+            woodCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (cardTop < windowHeight - 100) {
+                    card.classList.add('visible');
+                }
+            });
+        });
+
+        // Modal logic for wood details
+        document.querySelectorAll('[data-wood]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.getAttribute('data-wood');
+                if (woodData[key]) {
+                    currentWood = woodData[key];
+                    modalTitle.textContent = currentWood.title;
+                    modalScientific.textContent = currentWood.scientific;
+                    modalImg.src = currentWood.image;
+                    modalDensity.textContent = currentWood.density;
+                    modalHardness.textContent = currentWood.hardness;
+                    modalDrying.textContent = currentWood.drying;
+                    modalDurability.textContent = currentWood.durability;
+                    modalUses.textContent = currentWood.uses;
+                    modalHistory.textContent = currentWood.history;
+                    modalPrice.textContent = currentWood.price;
+                    modalOverlay.classList.add('active');
+                }
+            });
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', () => {
+            modalOverlay.classList.remove('active');
+        });
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.classList.remove('active');
+            }
+        });
+
+        // Wood category filtering
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                // Filter wood cards
+                woodCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Confirm order button
+        confirmOrderBtn.addEventListener('click', () => {
+            if (!currentWood) return;
+            
+            const quantity = quantityInput.value || 1;
+            const totalPrice = parseFloat(currentWood.price.replace('€', '')) * quantity;
+            
+            purchaseDetails.innerHTML = `
+                <div style="display:flex; align-items:center; margin-bottom:20px;">
+                    <img src="${currentWood.image}" alt="${currentWood.title}" style="width:80px; height:80px; object-fit:cover; border-radius:8px; margin-right:15px;">
+                    <div>
+                        <h4>${currentWood.title}</h4>
+                        <p>Quantité: ${quantity} m³</p>
+                        <p>Prix unitaire: ${currentWood.price}</p>
+                        <p style="font-weight:700; color:var(--accent);">Total: €${totalPrice.toFixed(2)}</p>
+                    </div>
+                </div>
+            `;
+            
+            modalOverlay.classList.remove('active');
+            purchaseModal.style.display = 'block';
+        });
+
+        // Close purchase modal
+        closePurchaseBtn.addEventListener('click', () => {
+            purchaseModal.style.display = 'none';
+        });
+
+        // Purchase form submission
+        purchaseForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre commande ! Nous vous contacterons dans les plus brefs délais pour finaliser votre achat.');
+            purchaseForm.reset();
+            purchaseModal.style.display = 'none';
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre message ! Nous vous contacterons très prochainement.');
+                contactForm.reset();
+            });
+        }
+
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre inscription à notre newsletter !');
+                newsletterForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
